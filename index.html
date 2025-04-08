@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-git1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#chartBtn').click(function(){
+          var value = $('.fx').val();
+          window.location.href = "chart.html?value=" + value;
+        });
+      });
+    </script>
+    <style>
+      body {
+        background: linear-gradient(135deg, #800080, #98ff98);
+        font-family: Arial, sans-serif;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+        min-height: 100vh;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      h1 {
+        margin: 0 0 10px;
+        font-size: 28px;
+      }
+      p {
+        margin: 5px 0;
+        font-size: 16px;
+      }
+      .social-buttons, .chart-section {
+        margin-top: 20px;
+      }
+      button {
+        background: #98ff98;
+        color: #800080;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: transform 0.2s;
+      }
+      button:hover {
+        transform: scale(1.05);
+      }
+      select.fx {
+        background: #fff;
+        color: #800080;
+        padding: 8px;
+        border-radius: 5px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>John Doe</h1>
+      <p>Web Developer & Crypto Enthusiast</p>
+      <p>email@example.com</p>
+      
+      <div class="social-buttons">
+        <a href="https://t.me/username"><button>Telegram</button></a>
+        <a href="https://twitter.com/username"><button>Twitter</button></a>
+        <a href="https://github.com/username"><button>GitHub</button></a>
+      </div>
+      
+      <div class="chart-section">
+        <select name="fx" class="fx">
+          <option value="BYBIT:BTCUSDT.P">BTC</option>
+        </select>
+        <button id="chartBtn">Show Chart</button>
+      </div>
+    </div>
+  </body>
+</html>
