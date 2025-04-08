@@ -1,6 +1,9 @@
 <html>
   <head>
-    <script src="https://code.jquery.com/jquery-git1.min.js"></script>
+    <!-- Подключаем jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Подключаем FontAwesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
       $(document).ready(function(){
         $('#chartBtn').click(function(){
@@ -58,18 +61,50 @@
         border-radius: 5px;
         margin: 10px 0;
       }
+      /* Стили для социальных кнопок с иконками */
+      .social-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+      .social-buttons a {
+        text-decoration: none;
+      }
+      .social-buttons i {
+        font-size: 36px; /* Размер иконок */
+        color: #fff; /* Белый цвет для гармонии с фоном */
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+      .social-buttons i:hover {
+        transform: scale(1.2) rotate(10deg); /* Увеличение и поворот */
+      }
+      .social-buttons .fa-telegram:hover {
+        color: #0088cc; /* Голубой для Telegram */
+      }
+      .social-buttons .fa-twitter:hover {
+        color: #1da1f2; /* Светло-голубой для Twitter */
+      }
+      .social-buttons .fa-github:hover {
+        color: #f0f0f0; /* Светло-серый для GitHub */
+      }
     </style>
   </head>
   <body>
     <div class="card">
-      <h1>John Doe</h1>
+      <h1>WiSH</h1>
       <p>Web Developer & Crypto Enthusiast</p>
       <p>email@example.com</p>
       
       <div class="social-buttons">
-        <a href="https://t.me/username"><button>Telegram</button></a>
-        <a href="https://twitter.com/username"><button>Twitter</button></a>
-        <a href="https://github.com/username"><button>GitHub</button></a>
+        <a href="https://t.me/username">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://twitter.com/username">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://github.com/username">
+          <i class="fab fa-github"></i>
+        </a>
       </div>
       
       <div class="chart-section">
