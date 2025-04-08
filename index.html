@@ -22,20 +22,27 @@
       border-radius: 15px;
       max-width: 400px;
     }
-    h1 { font-size: 28px; margin-bottom: 10px; }
+    h1 { font-size: 28px; margin: 0 0 10px; }
     p { margin: 5px 0; }
     .social-buttons, .chart-section { margin-top: 20px; }
     button, select.fx {
       background: #98ff98;
       color: #800080;
       border: none;
-      padding: 8px 20px;
-      border-radius: 25px;
+      padding: 8px 12px;
+      border-radius: 30px;
       cursor: pointer;
       font-weight: 700;
+      transition: transform .2s;
     }
-    button:hover, select.fx:hover { transform: scale(1.05); transition: transform .2s; }
-    select.fx { margin: 10px 0; width: 100%; }
+    button:hover, select.fx:hover { transform: scale(1.05); }
+    select.fx {
+      width: 180px;
+      margin: 10px 0;
+      font-size: 16px;
+      appearance: none;
+      text-align: center;
+    }
     .social-buttons {
       display: flex;
       gap: 15px;
@@ -45,10 +52,10 @@
     .social-buttons i {
       font-size: 36px;
       color: #fff;
+      transition: transform .3s, color .3s;
     }
     .social-buttons i:hover {
       transform: scale(1.2) rotate(10deg);
-      transition: transform .3s, color .3s;
     }
     .fa-telegram:hover { color: #0088cc; }
     .fa-twitter:hover { color: #1da1f2; }
@@ -65,7 +72,10 @@
       <a href="https://github.com/username"><i class="fab fa-github"></i></a>
     </div>
     <div class="chart-section">
-      <select class="fx"><option value="BTCUSDT.P">BTC-USDT(Bybit)</option></select>
+      <select class="fx">
+        <option value="BTCUSDT.P">BTC-USDT(Bybit)</option>
+        <option value="ETHUSDT.P">ETH-USDT(Bybit)</option>
+      </select>
       <button onclick="location.href='chart.html?value='+this.previousElementSibling.value">Show Chart</button>
     </div>
   </div>
