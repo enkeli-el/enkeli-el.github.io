@@ -5,8 +5,7 @@
       $(document).ready(function(){
         $('#chartBtn').click(function(){
           var value = $('.fx').val();
-          $('#content').attr('src', "chart.html?value=" + value);
-          $('#content').css('display', 'block');
+          window.location.href = "chart.html?value=" + value;
         });
       });
     </script>
@@ -59,14 +58,6 @@
         border-radius: 5px;
         margin: 10px 0;
       }
-      iframe#content {
-        height: 300px;
-        width: 100%;
-        display: none;
-        border: none;
-        border-radius: 10px;
-        margin-top: 10px;
-      }
     </style>
   </head>
   <body>
@@ -86,7 +77,6 @@
           <option value="BYBIT:BTCUSDT.P">BTC</option>
         </select>
         <button id="chartBtn">Show Chart</button>
-        <iframe src="chart.html" id="content"></iframe>
       </div>
     </div>
   </body>
