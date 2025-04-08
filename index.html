@@ -1,118 +1,73 @@
-<html>
-  <head>
-    <!-- Подключаем jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Подключаем FontAwesome для иконок -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script>
-      $(document).ready(function(){
-        $('#chartBtn').click(function(){
-          var value = $('.fx').val();
-          window.location.href = "chart.html?value=" + value;
-        });
-      });
-    </script>
-    <style>
-      body {
-        background: linear-gradient(135deg, #800080, #98ff98);
-        font-family: Arial, sans-serif;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
-        margin: 0;
-        min-height: 100vh;
-      }
-      .card {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 20px;
-        border-radius: 15px;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-      h1 {
-        margin: 0 0 10px;
-        font-size: 28px;
-      }
-      p {
-        margin: 5px 0;
-        font-size: 16px;
-      }
-      .social-buttons, .chart-section {
-        margin-top: 20px;
-      }
-      button {
-        background: #98ff98;
-        color: #800080;
-        border: none;
-        padding: 10px 20px;
-        margin: 5px;
-        border-radius: 25px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: transform 0.2s;
-      }
-      button:hover {
-        transform: scale(1.05);
-      }
-      select.fx {
-        background: #fff;
-        color: #800080;
-        padding: 8px;
-        border-radius: 5px;
-        margin: 10px 0;
-      }
-      /* Стили для социальных кнопок с иконками */
-      .social-buttons {
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-      }
-      .social-buttons a {
-        text-decoration: none;
-      }
-      .social-buttons i {
-        font-size: 36px; /* Размер иконок */
-        color: #fff; /* Белый цвет для гармонии с фоном */
-        transition: transform 0.3s ease, color 0.3s ease;
-      }
-      .social-buttons i:hover {
-        transform: scale(1.2) rotate(10deg); /* Увеличение и поворот */
-      }
-      .social-buttons .fa-telegram:hover {
-        color: #0088cc; /* Голубой для Telegram */
-      }
-      .social-buttons .fa-twitter:hover {
-        color: #1da1f2; /* Светло-голубой для Twitter */
-      }
-      .social-buttons .fa-github:hover {
-        color: #f0f0f0; /* Светло-серый для GitHub */
-      }
-    </style>
-  </head>
-  <body>
-    <div class="card">
-      <h1>WiSH</h1>
-      <p>Web Developer & Crypto Enthusiast</p>
-      <p>email@example.com</p>
-      
-      <div class="social-buttons">
-        <a href="https://t.me/username">
-          <i class="fab fa-telegram"></i>
-        </a>
-        <a href="https://twitter.com/username">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://github.com/username">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      
-      <div class="chart-section">
-        <select name="fx" class="fx">
-          <option value="BTCUSDT.P">BTC-USDT(Bybit)</option>
-        </select>
-        <button id="chartBtn">Show Chart</button>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WiSH</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #800080, #98ff98);
+      font: 16px Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      display: grid;
+      place-items: center;
+    }
+    .card {
+      background: rgba(255,255,255,.1);
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 400px;
+    }
+    h1 { font-size: 28px; margin-bottom: 10px; }
+    p { margin: 5px 0; }
+    .social-buttons, .chart-section { margin-top: 20px; }
+    button, select.fx {
+      background: #98ff98;
+      color: #800080;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover, select.fx:hover { transform: scale(1.05); transition: transform .2s; }
+    select.fx { margin: 10px 0; width: 100%; }
+    .social-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+    .social-buttons a { text-decoration: none; }
+    .social-buttons i {
+      font-size: 36px;
+      color: #fff;
+    }
+    .social-buttons i:hover {
+      transform: scale(1.2) rotate(10deg);
+      transition: transform .3s, color .3s;
+    }
+    .fa-telegram:hover { color: #0088cc; }
+    .fa-twitter:hover { color: #1da1f2; }
+    .fa-github:hover { color: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>WiSH</h1>
+    <p>Web Developer & Crypto Enthusiast<br>email@example.com</p>
+    <div class="social-buttons">
+      <a href="https://t.me/username"><i class="fab fa-telegram"></i></a>
+      <a href="https://twitter.com/username"><i class="fab fa-twitter"></i></a>
+      <a href="https://github.com/username"><i class="fab fa-github"></i></a>
     </div>
-  </body>
+    <div class="chart-section">
+      <select class="fx"><option value="BTCUSDT.P">BTC-USDT(Bybit)</option></select>
+      <button onclick="location.href='chart.html?value='+this.previousElementSibling.value">Show Chart</button>
+    </div>
+  </div>
+</body>
 </html>
